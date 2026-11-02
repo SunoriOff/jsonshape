@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jsonshape"
+version = "0.1.0"
+description = "See the structure of any JSON at a glance: tree, TypeScript interfaces or JSON Schema. Zero dependencies."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "WTFPL" }
+authors = [{ name = "SunoriOff" }]
+keywords = ["json", "jsonl", "schema", "typescript", "cli", "devtools", "api"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+jsonshape = "jsonshape.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/SunoriOff/jsonshape"
+Issues = "https://github.com/SunoriOff/jsonshape/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
